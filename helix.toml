@@ -1,0 +1,43 @@
+[runtime]
+architect_recovery_stall_steps = 3
+architect_max_recoveries = 3
+patchforge_cli = "C:\\Users\\joshh\\Documents\\Projects\\PatchForge\\patchforge.py"
+# 0 means no hard step limit. Stall detection remains active.
+max_steps = 0
+command_timeout_seconds = 180
+stall_escalation_steps = 3
+stall_stop_steps = 8
+max_create_chunk_chars = 3500
+model_repair_attempts = 2
+
+[models.architect]
+provider = "ollama"
+model = "gpt-oss:20b"
+base_url = "http://localhost:11434"
+timeout_seconds = 300
+enabled = true
+num_predict = 12000
+num_ctx = 32768
+[models.orchestrator]
+provider = "ollama"
+model = "qwen3.5:4b"
+base_url = "http://localhost:11434"
+timeout_seconds = 120
+enabled = true
+num_predict = 2048
+num_ctx = 8192
+[models.coder]
+provider = "ollama"
+model = "qwen3.5:9b"
+base_url = "http://localhost:11434"
+timeout_seconds = 180
+enabled = true
+num_predict = 8192
+num_ctx = 16384
+[models.remote]
+provider = "openai_compatible"
+model = ""
+base_url = ""
+api_key_env = "HELIX_REMOTE_API_KEY"
+timeout_seconds = 180
+enabled = false

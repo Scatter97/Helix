@@ -1,0 +1,6 @@
+{
+  "name": "todo-cli",
+  "task": "Build a complete Python command-line todo application from scratch.\n\nRequirements:\n- Store todos persistently in a JSON file.\n- Support add, list, done, and delete commands.\n- Each todo must have a numeric ID, text, and completed state.\n- The list command must clearly show completed and incomplete tasks.\n- Add automated tests using pytest.\n- Do not stop until the application works and all tests pass.\n- Use pytest -q as the final verification.",
+  "setup_files": {},
+  "verification_command": "pytest -q"
+}
